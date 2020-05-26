@@ -1,0 +1,14 @@
+<script>
+
+var canvas = document.createElement("canvas");
+var gl = canvas.getContext("webgl") || canvas.getContext("experimental-webgl");
+
+if (gl) {
+    console.log("webgl detected");
+} else {
+    console.log("webgl not detected :(");
+}
+
+console.log(gl);
+
+</script>
