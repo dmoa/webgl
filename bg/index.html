@@ -4,20 +4,14 @@
 </style>
 <script>
 
-let gl;
+canvas = document.querySelector("canvas");
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
 
-window.addEventListener("load", function setupWebGL (evt) {
-    window.removeEventListener(evt.type, setupWebGL, false);
-    canvas = document.querySelector("canvas");
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-
-    gl = canvas.getContext("webgl") || canvas.getContext("experimental-webgl");
-    gl.viewport(0, 0, gl.drawingBufferWidth, gl.drawingBufferHeight);
-    gl.clearColor(0.0, 0.5, 0.0, 1.0);
-    gl.clear(gl.COLOR_BUFFER_BIT);
-
-}, false);
+let gl = canvas.getContext("webgl") || canvas.getContext("experimental-webgl");
+gl.viewport(0, 0, gl.drawingBufferWidth, gl.drawingBufferHeight);
+gl.clearColor(0.0, 0.5, 0.0, 1.0);
+gl.clear(gl.COLOR_BUFFER_BIT);
 
 window.addEventListener("resize", function() {
     console.log("resized!");
